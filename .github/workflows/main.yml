@@ -20,8 +20,6 @@ jobs:
         with:
           repository: Ghostling225/Homepage-Source
 
-
-
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.1.1
         with:
@@ -29,13 +27,10 @@ jobs:
           node-version: 16.x
           # Target architecture for Node to use. Examples: x86, x64. Will use system architecture by default.
           architecture: x64
-          # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. Supports wildcards or a list of file names for caching multiple dependencies.
-          cache-dependency-path: $GITHUB_WORKSPACE/package-lock.json # optional
 
-
-      
       # Runs a single command using the runners shell
       - name: NPM build
         run: |
           cd $GITHUB_WORKSPACE
+          npm install
           npm run build
