@@ -20,10 +20,12 @@ jobs:
         with:
           repository: Ghostling225/Homepage-Source
           path: source/
+          
       # Checkout homepage build repo (github page repo)
       - uses: actions/checkout@main
         with:
           path: build/
+          
       # Install node
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.1.1
@@ -42,7 +44,6 @@ jobs:
           \mv build/* ../build/
           
       # Commit the new build to git and push to GitHub
-      - name: Commit and Push
       - uses: actions/checkout@main
       - run: |
           cd $GITHUB_WORKSPACE/build
