@@ -50,7 +50,6 @@ jobs:
           
           git init
           git remote add github git@github.com:Ghostling225/ghostling225.github.io.git
-          
       
       - uses: actions/checkout@v2
         with:
@@ -58,10 +57,9 @@ jobs:
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
       - name: Commit files
         run: |
-          cd $GITHUB_WORKSPACE/out
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          cp -r ../source/build/* ./
+          cp -r $GITHUB_WORKSPACE/source/build/* $GITHUB_WORKSPACE/out/
           git commit -m "Automatic Pages update" -a
       - name: Push changes
         uses: ad-m/github-push-action@master
