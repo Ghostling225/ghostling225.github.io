@@ -39,8 +39,8 @@ jobs:
           npm install
           npm run build
           
-      # Copy build
-      - name: Copy build
+      # Create out repo
+      - name: Create local output git repo
         run: |
           cd $GITHUB_WORKSPACE
           mkdir out
@@ -50,8 +50,8 @@ jobs:
           
           git init
           git remote add github git@github.com:Ghostling225/ghostling225.github.io.git
-          cp -r ../source/build/* ./
           
+      
       - uses: actions/checkout@v2
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
@@ -60,6 +60,7 @@ jobs:
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+          cp -r ../source/build/* ./
           git commit -m "Automatic Pages update" -a
       - name: Push changes
         uses: ad-m/github-push-action@master
