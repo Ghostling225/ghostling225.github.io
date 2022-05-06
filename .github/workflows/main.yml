@@ -39,15 +39,15 @@ jobs:
           cd $GITHUB_WORKSPACE/source
           npm install
           npm run build
-          \mv build/ ../build/
+          \mv build/* ../build/
           
-      # Commit the new build to git and push to GitHub     
+      # Commit the new build to git and push to GitHub
       - name: Commit and Push
-        run: |
+      - uses: actions/checkout@main
+      - run: |
           cd $GITHUB_WORKSPACE/build
-          git config --local user.email Ghostling225@users.noreply.github.com
-          git config --local user.name Ghostling225
-          
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git add ./*
-          git commit -m "Actions - Automatic build update"
+          git commit -m "generated"
           git push
