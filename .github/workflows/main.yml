@@ -41,7 +41,7 @@ jobs:
           cd $GITHUB_WORKSPACE/source
           npm install
           npm run build
-          \mv build/* ../build/
+          \mv -f build/* ../build/
           
       # Commit the new build to git and push to GitHub
       - uses: actions/checkout@main
