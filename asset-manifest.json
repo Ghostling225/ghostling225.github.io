@@ -1,7 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.1798a587.css",
-    "main.js": "/static/js/main.f28e513e.js",
+    "main.js": "/static/js/main.99bfecd8.js",
+    "static/media/cleancraft.png": "/static/media/cleancraft.a1db8ef3072d499fc8ef.png",
+    "static/media/climod.png": "/static/media/climod.2062380b8e8b538c4a60.png",
+    "static/media/climoddocs.png": "/static/media/climoddocs.2da42658711521963c53.png",
+    "static/media/climodsource.png": "/static/media/climodsource.6a49b359de8df1fc5c7f.png",
+    "static/media/page.png": "/static/media/page.6bc97264ccda09e8f71d.png",
+    "static/media/tetravex.png": "/static/media/tetravex.bba9000141b3786da9f1.png",
     "static/media/roboto-all-500-normal.woff": "/static/media/roboto-all-500-normal.52cb737b682eb9661ee1.woff",
     "static/media/roboto-all-700-normal.woff": "/static/media/roboto-all-700-normal.ef6d1d09b20b877fee4e.woff",
     "static/media/roboto-all-400-normal.woff": "/static/media/roboto-all-400-normal.376ea5d93f71583052f6.woff",
@@ -36,10 +42,10 @@
     "static/media/roboto-greek-ext-700-normal.woff2": "/static/media/roboto-greek-ext-700-normal.9674bc0ae12c2551d9d1.woff2",
     "index.html": "/index.html",
     "main.1798a587.css.map": "/static/css/main.1798a587.css.map",
-    "main.f28e513e.js.map": "/static/js/main.f28e513e.js.map"
+    "main.99bfecd8.js.map": "/static/js/main.99bfecd8.js.map"
   },
   "entrypoints": [
     "static/css/main.1798a587.css",
-    "static/js/main.f28e513e.js"
+    "static/js/main.99bfecd8.js"
   ]
 }
