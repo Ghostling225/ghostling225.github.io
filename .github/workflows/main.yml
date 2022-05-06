@@ -15,11 +15,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Checkout homepage source code
       - uses: actions/checkout@main
         with:
           repository: Ghostling225/Homepage-Source
-
+          path: source/
+      # Checkout homepage build repo (github page repo)
+      - uses: actions/checkout@main
+        with:
+          path: build/
+      # Install node
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.1.1
         with:
@@ -28,9 +33,21 @@ jobs:
           # Target architecture for Node to use. Examples: x86, x64. Will use system architecture by default.
           architecture: x64
 
-      # Runs a single command using the runners shell
+      # Installs project dependencies and builds bundle with npm. Moves  
       - name: NPM build
         run: |
-          cd $GITHUB_WORKSPACE
+          cd $GITHUB_WORKSPACE/source
           npm install
           npm run build
+          \mv build/ ../build/
+          
+      # Commit the new build to git and push to GitHub     
+      - name: Commit and Push
+        run: |
+          cd $GITHUB_WORKSPACE/build
+          git config --local user.email Ghostling225@users.noreply.github.com
+          git config --local user.name Ghostling225
+          
+          git add ./*
+          git commit -m "Actions - Automatic build update"
+          git push
