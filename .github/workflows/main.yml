@@ -51,7 +51,7 @@ jobs:
           
           git remote add github git@github.com:Ghostling225/ghostling225.github.io.git
           
-          cp ../source/build/* ./
+          cp -r ../source/build/* ./
           git add ./*
           git commit -m "Automatic Pages build update"
           
